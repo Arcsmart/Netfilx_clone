@@ -13,7 +13,7 @@ const Header = () => {
         <div className="header_left">
           <ul>
             <li>
-              <image src={Logo} alt="netfilexLogo" width="100" />
+              <img src={Logo} alt="netfilexLogo" width="100" />
             </li>
             <li>Netfilx</li>
             <li>Home</li>
