@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import "./Row.css"
 import axios from '../../../utils/axios'
-// import { Height } from '@mui/icons-material';
-// import movieTrailer from 'movie-trailer'
-// import YouTube from 'react-youtube';
+
+import movieTrailer from 'movie-trailer'
+import YouTube from 'react-youtube';
 
 const Row = ({title,fetchUrl,isLargeRow}) => {
 const[movies,setMovie]=useState([]);
-// const [trailerUrl,setTrailerUrl]=useState("")
+const [trailerUrl,setTrailerUrl]=useState("")
 const base_url = "https://image.tmdb.org/t/p/original";
 useEffect(()=>{
           (async()=>{
@@ -21,20 +21,20 @@ useEffect(()=>{
                     }      
           }) ()       
 },[fetchUrl]);
-// const handleCLICK=(movie)=>{
-//           if(trailerUrl){
-//           setTrailerUrl('')
-//           }else{
-//           movieTrailer(movie?.title ||movie?.name||movie?.original_name)
-//           .then((url)=>{
-//           console.log(url)
-//           const urlparams=new URLSearchParams(new URL(url).search)
-//           console.log(urlparams)
-//           console.log(urlparams.get('v'))
-//           setTrailerUrl(urlparams.get('v'))       
-//           })        
-//           }         
-// }
+const handleCLICK=(movie)=>{
+          if(trailerUrl){
+          setTrailerUrl('')
+          }else{
+          movieTrailer(movie?.title ||movie?.name||movie?.original_name)
+          .then((url)=>{
+          console.log(url)
+          const urlparams=new URLSearchParams(new URL(url).search)
+          console.log(urlparams)
+          console.log(urlparams.get('v'))
+          setTrailerUrl(urlparams.get('v'))       
+          })        
+          }         
+}
 const opts={
           height:'390',
           width:'100%',
@@ -52,7 +52,7 @@ const opts={
           ))}
      </div>
      <div style={{padding:'40px'}}>
-          {/* {trailerUrl&&<YouTube videoId={trailerUrl} opts={opts}/>} */}
+          {trailerUrl&&<YouTube videoId={trailerUrl} opts={opts}/>}
      </div>     
 
     </div>
