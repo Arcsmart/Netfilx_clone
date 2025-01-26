@@ -3,7 +3,7 @@ background-color: #111;
 color: grey;
 display: flex;
 justify-content: center;
-margin-top:110px;
+margin-top:-80px;
 }
 .footer_inner_container{
  width: 60%;
